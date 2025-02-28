@@ -10,6 +10,8 @@ Highest Number is a hook programmed in C for the Xahau blockchain. A hook is a s
 
 Highest Number is a Hook that converts a Xahau account in an engine for a simple game. This a simple idea for others to use to create more sophisticated and customizable hooks.
 
+UPDATE: There is a  Javascript version [file](https://github.com/Ekiserrepe/highestnumber-hook/blob/main/highest.ts) available for [JSHooks Builder](https://jshooks-builder.xahau.network/)
+
 ## Explanation
 
 
@@ -48,6 +50,32 @@ HookOn is activated to trigger for Invoke and Payment transactions. You can veri
         {
           "Hook": {
             "HookHash": "E0C65E4A905F6A0835C3753467176F2BE031C239A7E0F82B44A99C8A4F119028",
+            "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000",
+            "HookOn": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFBFFFFE",
+          }
+        }
+      ],
+      ...networkInfo.txValues,
+    };
+
+## How to install the Highest Number Hook on JSHooks Testnet?
+
+HookHash: FEE2B691E718F1AD184DFA60232429B336D3AD231F17A918D78413F266BAD241
+
+1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
+
+2. Or you can do it sending the transaction below:
+
+HookOn is activated to trigger for Invoke and Payment transactions. You can verify it copying the HookOn value (FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFBFFFFE) in this website: https://richardah.github.io/xrpl-hookon-calculator/
+
+    const prepared = {
+      "TransactionType": "SetHook",
+      "Account": your_account_address,
+      "Flags": 0,
+      "Hooks": [
+        {
+          "Hook": {
+            "HookHash": "FEE2B691E718F1AD184DFA60232429B336D3AD231F17A918D78413F266BAD241",
             "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000",
             "HookOn": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFBFFFFE",
           }
@@ -134,6 +162,7 @@ Same as Testnet but changing the hookhash. The Hookhash is 0FFB97070F3B6D4DFC5C0
 You can try this hook just sending 1 XAH to one of the next networks (I am not responsible for loss of funds if the hook has stopped working.):
 
 - Testnet: rK9rfPgLXExBY24X6aAfKNePMyqzhTDtCe
+- JSHooks Testnet: rpcj2vEkdCBJdL3FqCcN4yvp1G41wbSv2P
 - Mainnet: rBne1jL7bPPkZpf1iESrgPS48cPt86K9RH
 
 
@@ -148,4 +177,4 @@ This is just a small example so that others can build similar ideas or extend th
 
 ## Special thanks
 
-Thanks to [@denis_angell](https://x.com/angell_denis) and [@Satish_nl](https://x.com/angell_denis) for being there when i get stuck.
+Thanks to [@denis_angell](https://x.com/angell_denis) , [@Satish_nl](https://x.com/satish_nl) and [@TeQu](https://x.com/_tequ_) for being there when i get stuck.
